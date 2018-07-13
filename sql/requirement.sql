@@ -1,7 +1,7 @@
 CREATE TABLE `requirement` (
-  `req_id` double NOT NULL,
+  `req_id` varchar(10) NOT NULL,
   `req_name` longtext NOT NULL,
-  `solution_id` int(20) NOT NULL,
+  `solution_id` varchar(10) NOT NULL,
   `req_type` longtext NOT NULL,
   `req_description` longtext NOT NULL,
   `priority` longtext NOT NULL,
