@@ -2,19 +2,19 @@ package org.inmogr.java.web.software.development.requirements.classes;
 
 public class Requirement {
 
-	private double reqID;
+	private String reqID;
 	private String reqName;
-	private int solutionID;
+	private String solutionID;
 	private RequirementType reqType;
 	private String reqDescription;
 	private ReqPriority priority;
 	private String patternName;
 
-	public double getReqID() {
+	public String getReqID() {
 		return reqID;
 	}
 
-	public void setReqID(double reqID) {
+	public void setReqID(String reqID) {
 		this.reqID = reqID;
 	}
 
@@ -26,11 +26,11 @@ public class Requirement {
 		this.reqName = reqName;
 	}
 
-	public int getSolutionID() {
+	public String getSolutionID() {
 		return solutionID;
 	}
 
-	public void setSolutionID(int solutionID) {
+	public void setSolutionID(String solutionID) {
 		this.solutionID = solutionID;
 	}
 
@@ -43,13 +43,13 @@ public class Requirement {
 	}
 	
 	public void setReqType(String reqType) {
-		if (reqType == RequirementType.functional.name()) {
+		if (reqType.equals(RequirementType.functional.name())) {
 			this.reqType = RequirementType.functional;
 		}
-		else if (reqType == RequirementType.nonfunctional.name()) {
+		else if (reqType.equals(RequirementType.nonfunctional.name())) {
 			this.reqType = RequirementType.nonfunctional;
 		}
-		else if (reqType == RequirementType.nontechnical.name()) {
+		else if (reqType.equals(RequirementType.nontechnical.name())) {
 			this.reqType = RequirementType.nontechnical;
 		}
 		else {
@@ -74,13 +74,13 @@ public class Requirement {
 	}
 	
 	public void setPriority(String priority) {
-		if (priority == ReqPriority.high.name()) {
+		if (priority.equals(ReqPriority.high.name())) {
 			this.priority = ReqPriority.high;
 		}
-		else if (priority == ReqPriority.low.name()) {
+		else if (priority.equals(ReqPriority.low.name())) {
 			this.priority = ReqPriority.low;
 		}
-		else if (priority == ReqPriority.neutral.name()) {
+		else if (priority.equals(ReqPriority.neutral.name())) {
 			this.priority = ReqPriority.neutral;
 		}
 		else {

@@ -33,10 +33,10 @@ public class Context {
 	}
 	
 	public void setPatternType(String patternType) {
-		if (patternType == PatternType.product.name()) {
+		if (patternType.equals(PatternType.product.name())) {
 			this.patternType = PatternType.product;
 		}
-		else if (patternType == PatternType.process.name()) {
+		else if (patternType.equals(PatternType.process.name())) {
 			this.patternType = PatternType.process;
 		}
 		else {
@@ -53,16 +53,16 @@ public class Context {
 	}
 	
 	public void setReqAct(String reqAct) {
-		if (reqAct == ReqEngAct.elicitation.name()) {
+		if (reqAct.equals(ReqEngAct.elicitation.name())) {
 			this.reqAct = ReqEngAct.elicitation;
 		}
-		else if (reqAct == ReqEngAct.specification.name()) {
+		else if (reqAct.equals(ReqEngAct.specification.name())) {
 			this.reqAct = ReqEngAct.specification;
 		}
-		else if (reqAct == ReqEngAct.validation.name()) {
+		else if (reqAct.equals(ReqEngAct.validation.name())) {
 			this.reqAct = ReqEngAct.validation;
 		}
-		else if (reqAct == ReqEngAct.allReqActivities.name()) {
+		else if (reqAct.equals(ReqEngAct.allReqActivities.name())) {
 			this.reqAct = ReqEngAct.allReqActivities;
 		}
 		else {

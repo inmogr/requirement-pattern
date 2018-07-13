@@ -54,7 +54,7 @@ public class RecordSelect {
 		return response;
 	}
 	
-	public static JsonObject selectRequirementPatternByID(int patternID) {
+	public static JsonObject selectRequirementPatternByID(String patternID) {
 		JsonObject response = new JsonObject();
 		SQLSelect select = new SQLSelect(Values.JAR_KEY, Values.DATABASE_URL, Values.DATABASE_USER, Values.DATABASE_PASS);
 		select.addColumn("*");
@@ -66,7 +66,7 @@ public class RecordSelect {
 		return response;
 	}
 	
-	public static JsonObject selectSolution(int patternID) {
+	public static JsonObject selectSolution(String patternID) {
 		JsonObject response = new JsonObject();
 		SQLSelect select = new SQLSelect(Values.JAR_KEY, Values.DATABASE_URL, Values.DATABASE_USER, Values.DATABASE_PASS);
 		select.addColumn("*");
@@ -78,7 +78,7 @@ public class RecordSelect {
 		return response;
 	}
 	
-	public static JsonObject selectSolutionByID(int solutionID) {
+	public static JsonObject selectSolutionByID(String solutionID) {
 		JsonObject response = new JsonObject();
 		SQLSelect select = new SQLSelect(Values.JAR_KEY, Values.DATABASE_URL, Values.DATABASE_USER, Values.DATABASE_PASS);
 		select.addColumn("*");
@@ -90,7 +90,7 @@ public class RecordSelect {
 		return response;
 	}
 	
-	public static JsonObject selectRequirement(int solutionID) {
+	public static JsonObject selectRequirement(String solutionID) {
 		JsonObject response = new JsonObject();
 		SQLSelect select = new SQLSelect(Values.JAR_KEY, Values.DATABASE_URL, Values.DATABASE_USER, Values.DATABASE_PASS);
 		select.addColumn("*");
@@ -102,7 +102,7 @@ public class RecordSelect {
 		return response;
 	}
 	
-	public static JsonObject selectRequirementByID(double reqID) {
+	public static JsonObject selectRequirementByID(String reqID) {
 		JsonObject response = new JsonObject();
 		SQLSelect select = new SQLSelect(Values.JAR_KEY, Values.DATABASE_URL, Values.DATABASE_USER, Values.DATABASE_PASS);
 		select.addColumn("*");
@@ -114,7 +114,7 @@ public class RecordSelect {
 		return response;
 	}
 	
-	public static JsonObject selectCommonReq(double requirementID) {
+	public static JsonObject selectCommonReq(String requirementID) {
 		JsonObject response = new JsonObject();
 		SQLSelect select = new SQLSelect(Values.JAR_KEY, Values.DATABASE_URL, Values.DATABASE_USER, Values.DATABASE_PASS);
 		select.addColumn("*");
@@ -126,7 +126,7 @@ public class RecordSelect {
 		return response;
 	}
 	
-	public static JsonObject selectCommonReqByID(int commonReqID) {
+	public static JsonObject selectCommonReqByID(String commonReqID) {
 		JsonObject response = new JsonObject();
 		SQLSelect select = new SQLSelect(Values.JAR_KEY, Values.DATABASE_URL, Values.DATABASE_USER, Values.DATABASE_PASS);
 		select.addColumn("*");
@@ -138,7 +138,7 @@ public class RecordSelect {
 		return response;
 	}
 	
-	public static JsonObject selectVariableReq(double requirementID) {
+	public static JsonObject selectVariableReq(String requirementID) {
 		JsonObject response = new JsonObject();
 		SQLSelect select = new SQLSelect(Values.JAR_KEY, Values.DATABASE_URL, Values.DATABASE_USER, Values.DATABASE_PASS);
 		select.addColumn("*");
@@ -150,7 +150,7 @@ public class RecordSelect {
 		return response;
 	}
 	
-	public static JsonObject selectVariableReqByID(int variableReqID) {
+	public static JsonObject selectVariableReqByID(String variableReqID) {
 		JsonObject response = new JsonObject();
 		SQLSelect select = new SQLSelect(Values.JAR_KEY, Values.DATABASE_URL, Values.DATABASE_USER, Values.DATABASE_PASS);
 		select.addColumn("*");

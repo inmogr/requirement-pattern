@@ -11,10 +11,28 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 public class CommonReqBean extends CommonReq {
+	
+	@Override
+	public String getCommonReqID() {
+		String response = super.getCommonReqID();
+		if (response == null) {
+			return "";
+		}
+		return response;
+	}
+	
+	@Override
+	public String getRequirementID() {
+		String response = super.getRequirementID();
+		if (response == null) {
+			return "";
+		}
+		return response;
+	}
 
 	public boolean isAdd() {
-		if (0 == getCommonReqID()) {return false;}
-		if (0 == getRequirementID()) {return false;}
+		if (null == getCommonReqID() || 0 == getCommonReqID().length()) {return false;}
+		if (null == getRequirementID() || 0 == getRequirementID().length()) {return false;}
 		if (null == getCommonDescription() || 0 == getCommonDescription().length()) {return false;}
 		if (null == getCommonConstraint() || 0 == getCommonConstraint().length()) {return false;}
 		if (null == getFixedPart() || 0 == getFixedPart().length()) {return false;}
@@ -37,7 +55,7 @@ public class CommonReqBean extends CommonReq {
 	}
 	
 	public boolean isDelete() {
-		if (0 == getCommonReqID()) { return false; }
+		if (null == getCommonReqID() || 0 == getCommonReqID().length()) { return false; }
 		return true;
 	}
 
@@ -48,10 +66,10 @@ public class CommonReqBean extends CommonReq {
 	
 	public void setClass(JsonObject json) {
 		if (json.has("common_req_id")) {
-            setCommonReqID(json.get("common_req_id").getAsInt());
+            setCommonReqID(json.get("common_req_id").getAsString());
         }
 		if (json.has("requirement_id")) {
-            setRequirementID(json.get("requirement_id").getAsDouble());
+            setRequirementID(json.get("requirement_id").getAsString());
         }
 		if (json.has("common_description")) {
             setCommonDescription(json.get("common_description").getAsString());

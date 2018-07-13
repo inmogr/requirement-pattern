@@ -1,6 +1,6 @@
 package org.inmogr.java.web.software.development.requirements.classes;
 
-public class ForDevelopment {
+public class ForDevelopment extends Consideration {
 
 	private String devGuide;
 

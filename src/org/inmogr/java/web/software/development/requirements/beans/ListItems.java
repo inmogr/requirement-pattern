@@ -6,8 +6,8 @@ import java.util.Map;
 
 public class ListItems {
 	
-	private int patternID;
-	private int solutionID;
+	private String patternID;
+	private String solutionID;
 	protected Map<String, ArrayList<String>> commonRequirements = new HashMap<>();
 	protected Map<String, ArrayList<String>> variableRequirements = new HashMap<>();
 	
@@ -17,24 +17,24 @@ public class ListItems {
 	//
 	//
 
-	public int getPatternID() {
+	public String getPatternID() {
 		return patternID;
 	}
 
-	public void setPatternID(int patternID) {
+	public void setPatternID(String patternID) {
 		this.patternID = patternID;
 	}
 
-	public int getSolutionID() {
+	public String getSolutionID() {
 		return solutionID;
 	}
 
-	public void setSolutionID(int solutionID) {
+	public void setSolutionID(String solutionID) {
 		this.solutionID = solutionID;
 	}
 
-	public void addRequirementID(double requirementID) {
-		String key = ""+requirementID;
+	public void addRequirementID(String requirementID) {
+		String key = requirementID;
 		if (!commonRequirements.containsKey(key)) {
 			commonRequirements.put(key, new ArrayList<>());
 		}
@@ -43,23 +43,23 @@ public class ListItems {
 		}
 	}
 
-	public void addCommonRequirementID(double requirementID, int commonRequirementID) {
-		String key = ""+requirementID;
+	public void addCommonRequirementID(String requirementID, String commonRequirementID) {
+		String key = requirementID;
 		if (!commonRequirements.containsKey(key)) {
 			commonRequirements.put(key, new ArrayList<>());
 		}
-		String id = ""+commonRequirementID;
+		String id = commonRequirementID;
 		if (!commonRequirements.get(key).contains(id)) {
 			commonRequirements.get(key).add(id);
 		}
 	}
 
-	public void addVariableReqID(double requirementID, int variableReqID) {
-		String key = ""+requirementID;
+	public void addVariableReqID(String requirementID, String variableReqID) {
+		String key = requirementID;
 		if (!variableRequirements.containsKey(key)) {
 			variableRequirements.put(key, new ArrayList<>());
 		}
-		String id = ""+variableReqID;
+		String id = variableReqID;
 		if (!variableRequirements.get(key).contains(id)) {
 			variableRequirements.get(key).add(id);
 		}

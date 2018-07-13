@@ -2,27 +2,27 @@ package org.inmogr.java.web.software.development.requirements.classes;
 
 public class VariableReq {
 
-	private int variableReqID;
-	private double requirementID;
+	private String variableReqID;
+	private String requirementID;
 	private String varDescription;
 	private String varConstraint;
 	private String fixedPart;
 	private String variationPoint;
 	private VariablePart varPart;
 
-	public int getVariableReqID() {
+	public String getVariableReqID() {
 		return variableReqID;
 	}
 
-	public void setVariableReqID(int variablePartID) {
+	public void setVariableReqID(String variablePartID) {
 		this.variableReqID = variablePartID;
 	}
 
-	public double getRequirementID() {
+	public String getRequirementID() {
 		return requirementID;
 	}
 
-	public void setRequirementID(double requirementID) {
+	public void setRequirementID(String requirementID) {
 		this.requirementID = requirementID;
 	}
 

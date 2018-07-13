@@ -12,6 +12,15 @@ import com.google.gson.JsonObject;
 public class RequirementPatternBean extends RequirementPatternExt {
 	
 	@Override
+	public String getPatternID() {
+		String response = super.getPatternID();
+		if (response == null) {
+			return "";
+		}
+		return response;
+	}
+	
+	@Override
 	public String getPatternName() {
 		String response = super.getPatternName();
 		if (response == null) {
@@ -82,9 +91,18 @@ public class RequirementPatternBean extends RequirementPatternExt {
 		}
 		return response;
 	}
+	
+	@Override
+	public String getRelatedPatternID() {
+		String response = super.getRelatedPatternID();
+		if (response == null) {
+			return "";
+		}
+		return response;
+	}
 
 	public boolean isAdd() {
-		if (0 == getPatternID()) {return false;}
+		if (null == getPatternID() || 0 == getPatternID().length()) {return false;}
 		if (null == getPatternName() || 0 == getPatternName().length()) {return false;}
 		if (null == getAKA() || 0 == getAKA().length()) {return false;}
 		if (null == getKnownUses() || 0 == getKnownUses().length()) {return false;}
@@ -95,9 +113,14 @@ public class RequirementPatternBean extends RequirementPatternExt {
 		if (null == getExample() || 0 == getExample().length()) {return false;}
 		if (null == getAuthor()) {return false;}
 		if (null == getClassification()) {return false;}
-		if (null == getConsideration()) {return false;}
+		if (null == getConsiderationForDesign()) {return false;}
+		if (null == getConsiderationForDevelopment()) {return false;}
+		if (null == getConsiderationForTesting()) {return false;}
 		if (null == getContext()) {return false;}
-		if (0 == getRelatedPatternID()) {return false;}
+//		if (null == getRelatedPatternID() || 0 == getRelatedPatternID().length()) {return false;}
+		if (null == getRelatedPatternID()) {
+			setRelatedPatternID("");
+		}
 		if (null == getRelationType()) {return false;}
 		return true;
 	}
@@ -117,7 +140,7 @@ public class RequirementPatternBean extends RequirementPatternExt {
 	}
 	
 	public boolean isDelete() {
-		if (0 == getPatternID()) { return false; }
+		if (null == getPatternID() || 0 == getPatternID().length()) { return false; }
 		return true;
 	}
 
@@ -128,7 +151,7 @@ public class RequirementPatternBean extends RequirementPatternExt {
 	
 	public void setClass(JsonObject json) {
 		if (json.has("pattern_id")) {
-            setPatternID(json.get("pattern_id").getAsInt());
+            setPatternID(json.get("pattern_id").getAsString());
         }
 		if (json.has("pattern_name")) {
             setPatternName(json.get("pattern_name").getAsString());
@@ -178,14 +201,47 @@ public class RequirementPatternBean extends RequirementPatternExt {
 		if (json.has("classification_allowed_value")) {
             setClassification_allowedValue(json.get("classification_allowed_value").getAsBoolean());
         }
-		if (json.has("consideration_con_constraint")) {
-            setConsideration_conConstraint(json.get("consideration_con_constraint").getAsString());
+		if (json.has("consideration_for_design_con_constraint")) {
+            setConsiderationForDesign_conConstraint(json.get("consideration_for_design_con_constraint").getAsString());
         }
-		if (json.has("consideration_con_description")) {
-            setConsideration_conDescription(json.get("consideration_con_description").getAsString());
+		if (json.has("consideration_for_design_con_description")) {
+            setConsiderationForDesign_conDescription(json.get("consideration_for_design_con_description").getAsString());
         }
-		if (json.has("consideration_con_purpose")) {
-            setConsideration_conPurpose(json.get("consideration_con_purpose").getAsString());
+		if (json.has("consideration_for_design_con_purpose")) {
+            setConsiderationForDesign_conPurpose(json.get("consideration_for_design_con_purpose").getAsString());
+        }
+		if (json.has("consideration_for_design_design_pattern_name")) {
+            setConsiderationForDesign_designPatternName(json.get("consideration_for_design_design_pattern_name").getAsString());
+        }
+		if (json.has("consideration_for_design_design_guide")) {
+            setConsiderationForDesign_designGuide(json.get("consideration_for_design_design_guide").getAsString());
+        }
+		if (json.has("consideration_for_development_con_constraint")) {
+            setConsiderationForDevelopment_conConstraint(json.get("consideration_for_development_con_constraint").getAsString());
+        }
+		if (json.has("consideration_for_development_con_description")) {
+            setConsiderationForDevelopment_conDescription(json.get("consideration_for_development_con_description").getAsString());
+        }
+		if (json.has("consideration_for_development_con_purpose")) {
+            setConsiderationForDevelopment_conPurpose(json.get("consideration_for_development_con_purpose").getAsString());
+        }
+		if (json.has("consideration_for_development_dev_guide")) {
+            setConsiderationForDevelopment_devGuide(json.get("consideration_for_development_dev_guide").getAsString());
+        }
+		if (json.has("consideration_for_testing_con_constraint")) {
+            setConsiderationForTesting_conConstraint(json.get("consideration_for_testing_con_constraint").getAsString());
+        }
+		if (json.has("consideration_for_testing_con_description")) {
+            setConsiderationForTesting_conDescription(json.get("consideration_for_testing_con_description").getAsString());
+        }
+		if (json.has("consideration_for_testing_con_purpose")) {
+            setConsiderationForTesting_conPurpose(json.get("consideration_for_testing_con_purpose").getAsString());
+        }
+		if (json.has("consideration_for_testing_test_guide")) {
+			setConsiderationForTesting_testGuide(json.get("consideration_for_testing_test_guide").getAsString());
+        }
+		if (json.has("consideration_for_testing_test_type")) {
+			setConsiderationForTesting_testType(json.get("consideration_for_testing_test_type").getAsString());
         }
 		if (json.has("context_bussiness_domain")) {
             setContext_bussinessDomain(json.get("context_bussiness_domain").getAsString());
@@ -197,7 +253,7 @@ public class RequirementPatternBean extends RequirementPatternExt {
             setContext_patternType(json.get("context_pattern_type").getAsString());
         }
 		if (json.has("context_req_act")) {
-            setContext_reqAct(json.get("context_req_act").getAsString());
+			setContext_reqAct(json.get("context_req_act").getAsString());
         }
 		if (json.has("context_stakeholder_role")) {
             setContext_stakeholder_role(json.get("context_stakeholder_role").getAsString());
@@ -206,7 +262,7 @@ public class RequirementPatternBean extends RequirementPatternExt {
             setContext_stakeholder_stakeGoal(json.get("context_stakeholder_stake_goal").getAsString());
         }
 		if (json.has("related_pattern_id")) {
-            setRelatedPatternID(json.get("related_pattern_id").getAsInt());
+            setRelatedPatternID(json.get("related_pattern_id").getAsString());
         }
 		if (json.has("relation_type_relation_extends")) {
             setRelationType_relationExtends(json.get("relation_type_relation_extends").getAsBoolean());

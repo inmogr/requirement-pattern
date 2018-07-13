@@ -14,6 +14,24 @@ import com.google.gson.JsonObject;
 public class SolutionBean extends Solution {
 	
 	@Override
+	public String getSolutionID() {
+		String response = super.getSolutionID();
+		if (response == null) {
+			return "";
+		}
+		return response;
+	}
+	
+	@Override
+	public String getPatternID() {
+		String response = super.getPatternID();
+		if (response == null) {
+			return "";
+		}
+		return response;
+	}
+	
+	@Override
 	public String getSolutionName() {
 		String response = super.getSolutionName();
 		if (response == null) {
@@ -62,9 +80,9 @@ public class SolutionBean extends Solution {
 	}
 
 	public boolean isAdd() {
-		if (0 == getSolutionID()) {return false;}
+		if (null == getSolutionID() || 0 == getSolutionID().length()) {return false;}
 		if (null == getSolutionName() || 0 == getSolutionName().length()) {return false;}
-		if (0 == getPatternID()) {return false;}
+		if (null == getPatternID() || 0 == getPatternID().length()) {return false;}
 		if (null == getGoal() || 0 == getGoal().length()) {return false;}
 		if (null == getDescription() || 0 == getDescription().length()) {return false;}
 		if (null == getVariabilityModel()) {return false;}
@@ -86,7 +104,7 @@ public class SolutionBean extends Solution {
 	}
 
 	public boolean isDelete() {
-		if (0 == getSolutionID()) { return false; }
+		if (null == getSolutionID() || 0 == getSolutionID().length()) { return false; }
 		return true;
 	}
 
@@ -97,13 +115,13 @@ public class SolutionBean extends Solution {
 	
 	public void setClass(JsonObject json) {
 		if (json.has("solution_id")) {
-            setSolutionID(json.get("solution_id").getAsInt());
+            setSolutionID(json.get("solution_id").getAsString());
         }
 		if (json.has("solution_name")) {
             setSolutionName(json.get("solution_name").getAsString());
         }
 		if (json.has("pattern_id")) {
-            setPatternID(json.get("pattern_id").getAsInt());
+            setPatternID(json.get("pattern_id").getAsString());
         }
 		if (json.has("goal")) {
             setGoal(json.get("goal").getAsString());

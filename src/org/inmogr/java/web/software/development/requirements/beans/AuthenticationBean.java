@@ -10,7 +10,7 @@ import com.google.gson.JsonObject;
 
 public class AuthenticationBean extends User {
 	
-	private boolean authenticated = true;
+	private boolean authenticated = false;
 
 	public boolean isAuthenticated() {
 		return true && authenticated;
@@ -38,6 +38,7 @@ public class AuthenticationBean extends User {
 	
 	public String signUp(UserBean user) {
 		JsonObject response = RecordAdd.addUser(user.deepCopy());
+		System.out.println(response.toString());
 		if (response.get(DatabaseConnector.STATUS).getAsString().equals(DatabaseConnector.SUCCESSFUL)) {
 			if (response.get(DatabaseConnector.RESPONSE).getAsString().equals(DatabaseConnector.SUCCESSFUL)) {
 				setlClass(user);

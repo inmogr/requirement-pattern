@@ -14,6 +14,24 @@ import com.google.gson.JsonObject;
 public class VariableReqBean extends VariableReqExt {
 	
 	@Override
+	public String getVariableReqID() {
+		String response = super.getVariableReqID();
+		if (response == null) {
+			return "";
+		}
+		return response;
+	}
+	
+	@Override
+	public String getRequirementID() {
+		String response = super.getRequirementID();
+		if (response == null) {
+			return "";
+		}
+		return response;
+	}
+	
+	@Override
 	public String getVarDescription() {
 		String response = super.getVarDescription();
 		if (response == null) {
@@ -77,8 +95,8 @@ public class VariableReqBean extends VariableReqExt {
 	}
 
 	public boolean isAdd() {
-		if (0 == getVariableReqID()) {return false;}
-		if (0 == getRequirementID()) {return false;}
+		if (null == getVariableReqID() || 0 == getVariableReqID().length()) {return false;}
+		if (null == getRequirementID() || 0 == getRequirementID().length()) {return false;}
 		if (0 == getVarDescription().length()) {return false;}
 		if (0 == getVarConstraint().length()) {return false;}
 		if (0 == getFixedPart().length()) {return false;}
@@ -104,7 +122,7 @@ public class VariableReqBean extends VariableReqExt {
 	}
 
 	public boolean isDelete() {
-		if (0 == getVariableReqID()) { return false; }
+		if (null == getVariableReqID() || 0 == getVariableReqID().length()) { return false; }
 		return true;
 	}
 
@@ -115,10 +133,10 @@ public class VariableReqBean extends VariableReqExt {
 	
 	public void setClass(JsonObject json) {
 		if (json.has("variable_req_id")) {
-            setVariableReqID(json.get("variable_req_id").getAsInt());
+            setVariableReqID(json.get("variable_req_id").getAsString());
         }
 		if (json.has("requirement_id")) {
-            setRequirementID(json.get("requirement_id").getAsDouble());
+            setRequirementID(json.get("requirement_id").getAsString());
         }
 		if (json.has("var_description")) {
             setVarDescription(json.get("var_description").getAsString());

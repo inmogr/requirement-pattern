@@ -1,6 +1,6 @@
 package org.inmogr.java.web.software.development.requirements.classes;
 
-public class ForTesting {
+public class ForTesting extends Consideration {
 
 	private String testType;
 	private String testGuide;

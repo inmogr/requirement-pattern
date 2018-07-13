@@ -2,7 +2,7 @@ package org.inmogr.java.web.software.development.requirements.classes;
 
 public class RequirementPattern {
 
-	private int patternID;
+	private String patternID;
 	private String patternName;
 	private String AKA;
 	private String knownUses;
@@ -13,16 +13,18 @@ public class RequirementPattern {
 	private String example;
 	private Author author;
 	private Classification classification;
-	private Consideration consideration;
+	private ForDesign considerationForDesign;
+	private ForDevelopment considerationForDevelopment;
+	private ForTesting considerationForTesting;
 	private Context context;
-	private int relatedPatternID;
+	private String relatedPatternID;
 	private PatternRelation relationType;
 
-	public int getPatternID() {
+	public String getPatternID() {
 		return patternID;
 	}
 
-	public void setPatternID(int patternID) {
+	public void setPatternID(String patternID) {
 		this.patternID = patternID;
 	}
 
@@ -106,12 +108,28 @@ public class RequirementPattern {
 		this.classification = classification;
 	}
 
-	public Consideration getConsideration() {
-		return consideration;
+	public ForDesign getConsiderationForDesign() {
+		return considerationForDesign;
 	}
 
-	public void setConsideration(Consideration consideration) {
-		this.consideration = consideration;
+	public void setConsiderationForDesign(ForDesign considerationForDesign) {
+		this.considerationForDesign = considerationForDesign;
+	}
+
+	public ForDevelopment getConsiderationForDevelopment() {
+		return considerationForDevelopment;
+	}
+
+	public void setConsiderationForDevelopment(ForDevelopment considerationForDevelopment) {
+		this.considerationForDevelopment = considerationForDevelopment;
+	}
+
+	public ForTesting getConsiderationForTesting() {
+		return considerationForTesting;
+	}
+
+	public void setConsiderationForTesting(ForTesting considerationForTesting) {
+		this.considerationForTesting = considerationForTesting;
 	}
 
 	public Context getContext() {
@@ -122,11 +140,11 @@ public class RequirementPattern {
 		this.context = context;
 	}
 
-	public int getRelatedPatternID() {
+	public String getRelatedPatternID() {
 		return relatedPatternID;
 	}
 
-	public void setRelatedPatternID(int relatedPatternID) {
+	public void setRelatedPatternID(String relatedPatternID) {
 		this.relatedPatternID = relatedPatternID;
 	}
 

@@ -13,6 +13,24 @@ import com.google.gson.JsonObject;
 public class RequirementBean extends Requirement {
 	
 	@Override
+	public String getReqID() {
+		String response = super.getReqID();
+		if (response == null) {
+			return "";
+		}
+		return response;
+	}
+	
+	@Override
+	public String getSolutionID() {
+		String response = super.getSolutionID();
+		if (response == null) {
+			return "";
+		}
+		return response;
+	}
+	
+	@Override
 	public String getReqName() {
 		String response = super.getReqName();
 		if (response == null) {
@@ -62,9 +80,9 @@ public class RequirementBean extends Requirement {
 	}
 
 	public boolean isAdd() {
-		if (0 == getReqID()) {return false;}
+		if (null == getReqID() || 0 == getReqID().length()) {return false;}
 		if (null == getReqName() || 0 == getReqName().length()) {return false;}
-		if (0 == getSolutionID()) {return false;}
+		if (null == getSolutionID() || 0 == getSolutionID().length()) {return false;}
 		if (null == getReqType()) {return false;}
 		if (null == getReqDescription() || 0 == getReqDescription().length()) {return false;}
 		if (null == getPriority()) {return false;}
@@ -87,7 +105,7 @@ public class RequirementBean extends Requirement {
 	}
 	
 	public boolean isDelete() {
-		if (0 == getReqID()) { return false; }
+		if (null == getReqID() || 0 == getReqID().length()) { return false; }
 		return true;
 	}
 
@@ -98,13 +116,13 @@ public class RequirementBean extends Requirement {
 	
 	public void setClass(JsonObject json) {
 		if (json.has("req_id")) {
-            setReqID(json.get("req_id").getAsDouble());
+            setReqID(json.get("req_id").getAsString());
         }
 		if (json.has("req_name")) {
             setReqName(json.get("req_name").getAsString());
         }
 		if (json.has("solution_id")) {
-            setSolutionID(json.get("solution_id").getAsInt());
+            setSolutionID(json.get("solution_id").getAsString());
         }
 		if (json.has("req_type")) {
             setReqTypeAsString(json.get("req_type").getAsString());

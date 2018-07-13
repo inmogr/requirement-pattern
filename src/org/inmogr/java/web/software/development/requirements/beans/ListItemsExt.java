@@ -7,11 +7,11 @@ public class ListItemsExt {
 
 	// ACTIVE ITEMS
 	private String SPLDomainName;
-	private int patternID;
-	private int solutionID;
-	private double requirementID;
-	private int commonRequirementID;
-	private int variableReqID;
+	private String patternID;
+	private String solutionID;
+	private String requirementID;
+	private String commonRequirementID;
+	private String variableReqID;
 	// ACTIVE ITEMS
 	
 	protected Map<String, ListItems> requirementPatterns = new HashMap<>();
@@ -24,65 +24,65 @@ public class ListItemsExt {
 		SPLDomainName = sPLDomainName;
 	}
 
-	public int getPatternID() {
+	public String getPatternID() {
 		return patternID;
 	}
 
-	public void setPatternID(int patternID) {
+	public void setPatternID(String patternID) {
 		this.patternID = patternID;
-		String key = ""+patternID;
+		String key = patternID;
 		if (!requirementPatterns.containsKey(key)) {
 			requirementPatterns.put(key, new ListItems());
 			requirementPatterns.get(key).setPatternID(patternID);
 		}
 	}
 
-	public int getSolutionID() {
+	public String getSolutionID() {
 		return solutionID;
 	}
 
-	public void setSolutionID(int solutionID) {
+	public void setSolutionID(String solutionID) {
 		this.solutionID = solutionID;
-		String key = ""+patternID;
+		String key = patternID;
 		if (!requirementPatterns.containsKey(key)) {
 			requirementPatterns.put(key, new ListItems());
 		}
 		requirementPatterns.get(key).setSolutionID(solutionID);
 	}
 
-	public double getRequirementID() {
+	public String getRequirementID() {
 		return requirementID;
 	}
 
-	public void setRequirementID(double requirementID) {
+	public void setRequirementID(String requirementID) {
 		this.requirementID = requirementID;
-		String key = ""+patternID;
+		String key = patternID;
 		if (!requirementPatterns.containsKey(key)) {
 			requirementPatterns.put(key, new ListItems());
 		}
 		requirementPatterns.get(key).addRequirementID(requirementID);
 	}
 
-	public int getCommonRequirementID() {
+	public String getCommonRequirementID() {
 		return commonRequirementID;
 	}
 
-	public void setCommonRequirementID(int commonRequirementID) {
+	public void setCommonRequirementID(String commonRequirementID) {
 		this.commonRequirementID = commonRequirementID;
-		String key = ""+patternID;
+		String key = patternID;
 		if (!requirementPatterns.containsKey(key)) {
 			requirementPatterns.put(key, new ListItems());
 		}
 		requirementPatterns.get(key).addCommonRequirementID(requirementID, commonRequirementID);
 	}
 
-	public int getVariableReqID() {
+	public String getVariableReqID() {
 		return variableReqID;
 	}
 
-	public void setVariableReqID(int variableReqID) {
+	public void setVariableReqID(String variableReqID) {
 		this.variableReqID = variableReqID;
-		String key = ""+patternID;
+		String key = patternID;
 		if (!requirementPatterns.containsKey(key)) {
 			requirementPatterns.put(key, new ListItems());
 		}
@@ -91,11 +91,11 @@ public class ListItemsExt {
 
 	public void clear() {
 		SPLDomainName = null;
-		patternID = 0;
-		solutionID = 0;
-		requirementID = 0;
-		commonRequirementID = 0;
-		variableReqID = 0;
+		patternID = null;
+		solutionID = null;
+		requirementID = null;
+		commonRequirementID = null;
+		variableReqID = null;
 		requirementPatterns = new HashMap<>();
 	}
 	

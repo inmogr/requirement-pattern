@@ -2,6 +2,10 @@ package org.inmogr.java.web.software.development.requirements.beans;
 
 import java.util.ArrayList;
 
+import org.inmogr.java.web.software.development.requirements.operations.Converter;
+
+import com.google.gson.JsonObject;
+
 public class PrintBean extends ListItemsExt {
 	
 	public int indexOfRP;
@@ -34,12 +38,12 @@ public class PrintBean extends ListItemsExt {
 		for (String key : requirementPatterns.keySet()) {
 			//
 			// requirement pattern
-			int patternID = requirementPatterns.get(key).getPatternID();
+			String patternID = requirementPatterns.get(key).getPatternID();
 			RequirementPatternBean requirementPattern = fetchRequirementPattern(patternID);
 			listOfRequirementPattern.add(requirementPattern);
 			//
 			// solution
-			int solutionID = requirementPatterns.get(key).getSolutionID();
+			String solutionID = requirementPatterns.get(key).getSolutionID();
 			SolutionBean solution = fetchSolution(solutionID);
 			listOfSolution.add(solution);
 			//
@@ -95,12 +99,12 @@ public class PrintBean extends ListItemsExt {
 			// end of requirement pattern
 		} // go to next iteration or end
 	}
-	
-	public RequirementPatternBean fetchIfHasRelatives(int patternID, int relatedPatternID) {
-		if (patternID == relatedPatternID || relatedPatternID == 0) {
-			return new RequirementPatternBean();
+
+	public JsonObject fetchIfHasRelatives(String patternID, String relatedPatternID) {
+		if (relatedPatternID == null || relatedPatternID.equals("") || relatedPatternID.equals(patternID)) {
+			return Converter.getJsonObject(new RequirementPatternBean());
 		}
-		return fetchRequirementPattern(relatedPatternID);
+		return Converter.getJsonObject(fetchRequirementPattern(relatedPatternID));
 	}
 	
 	//
@@ -111,14 +115,14 @@ public class PrintBean extends ListItemsExt {
 	//
 	//
 
-	private RequirementPatternBean fetchRequirementPattern(int patternID) {
+	private RequirementPatternBean fetchRequirementPattern(String patternID) {
 		RequirementPatternBean requirementPattern = new RequirementPatternBean();
 		requirementPattern.setPatternID(patternID);
 		requirementPattern.fetch();
 		return requirementPattern;
 	}
 	
-	private SolutionBean fetchSolution(int solutionID) {
+	private SolutionBean fetchSolution(String solutionID) {
 		SolutionBean solution = new SolutionBean();
 		solution.setSolutionID(solutionID);
 		solution.fetch();
@@ -126,25 +130,22 @@ public class PrintBean extends ListItemsExt {
 	}
 
 	private RequirementBean fetchRequirement(String requirementID) {
-		double theRequirementID = Double.parseDouble(requirementID);
 		RequirementBean requirement = new RequirementBean();
-		requirement.setReqID(theRequirementID);
+		requirement.setReqID(requirementID);
 		requirement.fetch();
 		return requirement;
 	}
 	
 	private CommonReqBean fetchCommonReq(String commonReqID) {
-		int theCommonReqID = Integer.parseInt(commonReqID);
 		CommonReqBean commonReq = new CommonReqBean();
-		commonReq.setCommonReqID(theCommonReqID);
+		commonReq.setCommonReqID(commonReqID);
 		commonReq.fetch();
 		return commonReq;
 	}
 
 	private VariableReqBean fetchVariableReq(String variableReqID) {
-		int theVariableReqID = Integer.parseInt(variableReqID);
 		VariableReqBean variableReq = new VariableReqBean();
-		variableReq.setVariableReqID(theVariableReqID);
+		variableReq.setVariableReqID(variableReqID);
 		variableReq.fetch();
 		return variableReq;
 	}

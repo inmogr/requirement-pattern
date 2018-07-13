@@ -2,26 +2,26 @@ package org.inmogr.java.web.software.development.requirements.classes;
 
 public class CommonReq {
 
-	private int commonReqID;
-	private double requirementID;
+	private String commonReqID;
+	private String requirementID;
 	private String commonDescription;
 	private String commonConstraint;
 	private String fixedPart;
 	private String extendedPart;
 
-	public int getCommonReqID() {
+	public String getCommonReqID() {
 		return commonReqID;
 	}
 
-	public void setCommonReqID(int commonReqID) {
+	public void setCommonReqID(String commonReqID) {
 		this.commonReqID = commonReqID;
 	}
 
-	public double getRequirementID() {
+	public String getRequirementID() {
 		return requirementID;
 	}
 
-	public void setRequirementID(double requirementID) {
+	public void setRequirementID(String requirementID) {
 		this.requirementID = requirementID;
 	}
 

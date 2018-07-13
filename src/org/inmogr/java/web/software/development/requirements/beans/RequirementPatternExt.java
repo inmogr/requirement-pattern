@@ -2,7 +2,9 @@ package org.inmogr.java.web.software.development.requirements.beans;
 
 import org.inmogr.java.web.software.development.requirements.classes.Author;
 import org.inmogr.java.web.software.development.requirements.classes.Classification;
-import org.inmogr.java.web.software.development.requirements.classes.Consideration;
+import org.inmogr.java.web.software.development.requirements.classes.ForDesign;
+import org.inmogr.java.web.software.development.requirements.classes.ForDevelopment;
+import org.inmogr.java.web.software.development.requirements.classes.ForTesting;
 import org.inmogr.java.web.software.development.requirements.classes.Context;
 import org.inmogr.java.web.software.development.requirements.classes.PatternRelation;
 import org.inmogr.java.web.software.development.requirements.classes.RequirementPattern;
@@ -18,9 +20,20 @@ public class RequirementPatternExt extends RequirementPattern {
 	private String classification_audience_role;
 	private String classification_audience_stakeGoal;
 	private boolean classification_allowedValue;
-	private String consideration_conConstraint;
-	private String consideration_conDescription;
-	private String consideration_conPurpose;
+	private String considerationForDesign_conConstraint;
+	private String considerationForDesign_conDescription;
+	private String considerationForDesign_conPurpose;
+	private String considerationForDesign_designPatternName;
+	private String considerationForDesign_designGuide;
+	private String considerationForDevelopment_conConstraint;
+	private String considerationForDevelopment_conDescription;
+	private String considerationForDevelopment_conPurpose;
+	private String considerationForDevelopment_devGuide;
+	private String considerationForTesting_conConstraint;
+	private String considerationForTesting_conDescription;
+	private String considerationForTesting_conPurpose;
+	private String considerationForTesting_testType;
+	private String considerationForTesting_testGuide;
 	private String context_bussinessDomain;
 	private String context_organizationFactor;
 	private String context_patternType;
@@ -32,7 +45,7 @@ public class RequirementPatternExt extends RequirementPattern {
 
 	public String getAuthor_name() {
 		String response = author_name;
-		if (author_name == null) {
+		if (response == null) {
 			return "";
 		}
 		return response;
@@ -50,7 +63,7 @@ public class RequirementPatternExt extends RequirementPattern {
 
 	public String getAuthor_date() {
 		String response = author_date;
-		if (author_name == null) {
+		if (response == null) {
 			return "";
 		}
 		return response;
@@ -68,7 +81,7 @@ public class RequirementPatternExt extends RequirementPattern {
 
 	public String getClassification_classType() {
 		String response = classification_classType;
-		if (author_name == null) {
+		if (response == null) {
 			return "";
 		}
 		return response;
@@ -86,7 +99,7 @@ public class RequirementPatternExt extends RequirementPattern {
 
 	public String getClassification_defaultValue() {
 		String response = classification_defaultValue;
-		if (author_name == null) {
+		if (response == null) {
 			return "";
 		}
 		return response;
@@ -104,7 +117,7 @@ public class RequirementPatternExt extends RequirementPattern {
 
 	public String getClassification_purpose() {
 		String response = classification_purpose;
-		if (author_name == null) {
+		if (response == null) {
 			return "";
 		}
 		return response;
@@ -122,7 +135,7 @@ public class RequirementPatternExt extends RequirementPattern {
 
 	public String getClassification_audience_role() {
 		String response = classification_audience_role;
-		if (author_name == null) {
+		if (response == null) {
 			return "";
 		}
 		return response;
@@ -145,7 +158,7 @@ public class RequirementPatternExt extends RequirementPattern {
 
 	public String getClassification_audience_stakeGoal() {
 		String response = classification_audience_stakeGoal;
-		if (author_name == null) {
+		if (response == null) {
 			return "";
 		}
 		return response;
@@ -179,64 +192,268 @@ public class RequirementPatternExt extends RequirementPattern {
 		object.setAllowedValue(classification_allowedValue);
 		setClassification(object);
 	}
-
-	public String getConsideration_conConstraint() {
-		String response = consideration_conConstraint;
-		if (author_name == null) {
+	
+	public String getConsiderationForDesign_conConstraint() {
+		String response = considerationForDesign_conConstraint;
+		if (response == null) {
 			return "";
 		}
 		return response;
 	}
 
-	public void setConsideration_conConstraint(String consideration_conConstraint) {
-		this.consideration_conConstraint = consideration_conConstraint;
-		Consideration object = getConsideration();
+	public void setConsiderationForDesign_conConstraint(String considerationForDesign_conConstraint) {
+		this.considerationForDesign_conConstraint = considerationForDesign_conConstraint;
+		ForDesign object = getConsiderationForDesign();
 		if (null == object) {
-			object = new Consideration();
+			object = new ForDesign();
 		}
-		object.setConConstraint(consideration_conConstraint);
-		setConsideration(object);
+		object.setConConstraint(considerationForDesign_conConstraint);
+		setConsiderationForDesign(object);
 	}
 
-	public String getConsideration_conDescription() {
-		String response = consideration_conDescription;
-		if (author_name == null) {
+	public String getConsiderationForDesign_conDescription() {
+		String response = considerationForDesign_conDescription;
+		if (response == null) {
 			return "";
 		}
 		return response;
 	}
 
-	public void setConsideration_conDescription(String consideration_conDescription) {
-		this.consideration_conDescription = consideration_conDescription;
-		Consideration object = getConsideration();
+	public void setConsiderationForDesign_conDescription(String considerationForDesign_conDescription) {
+		this.considerationForDesign_conDescription = considerationForDesign_conDescription;
+		ForDesign object = getConsiderationForDesign();
 		if (null == object) {
-			object = new Consideration();
+			object = new ForDesign();
 		}
-		object.setConDescription(consideration_conDescription);
-		setConsideration(object);
+		object.setConDescription(considerationForDesign_conDescription);
+		setConsiderationForDesign(object);
 	}
 
-	public String getConsideration_conPurpose() {
-		String response = consideration_conPurpose;
-		if (author_name == null) {
+	public String getConsiderationForDesign_conPurpose() {
+		String response = considerationForDesign_conPurpose;
+		if (response == null) {
 			return "";
 		}
 		return response;
 	}
 
-	public void setConsideration_conPurpose(String consideration_conPurpose) {
-		this.consideration_conPurpose = consideration_conPurpose;
-		Consideration object = getConsideration();
+	public void setConsiderationForDesign_conPurpose(String considerationForDesign_conPurpose) {
+		this.considerationForDesign_conPurpose = considerationForDesign_conPurpose;
+		ForDesign object = getConsiderationForDesign();
 		if (null == object) {
-			object = new Consideration();
+			object = new ForDesign();
 		}
-		object.setConPurpose(consideration_conPurpose);
-		setConsideration(object);
+		object.setConPurpose(considerationForDesign_conPurpose);
+		setConsiderationForDesign(object);
+	}
+	
+	//
+	
+	public String getConsiderationForDesign_designPatternName() {
+		String response = considerationForDesign_designPatternName;
+		if (response == null) {
+			return "";
+		}
+		return response;
+	}
+
+	public void setConsiderationForDesign_designPatternName(String considerationForDesign_designPatternName) {
+		this.considerationForDesign_designPatternName = considerationForDesign_designPatternName;
+		ForDesign object = getConsiderationForDesign();
+		if (null == object) {
+			object = new ForDesign();
+		}
+		object.setDesignPatternName(considerationForDesign_designPatternName);
+		setConsiderationForDesign(object);
+	}
+
+	public String getConsiderationForDesign_designGuide() {
+		String response = considerationForDesign_designGuide;
+		if (response == null) {
+			return "";
+		}
+		return response;
+	}
+
+	public void setConsiderationForDesign_designGuide(String considerationForDesign_designGuide) {
+		this.considerationForDesign_designGuide = considerationForDesign_designGuide;
+		ForDesign object = getConsiderationForDesign();
+		if (null == object) {
+			object = new ForDesign();
+		}
+		object.setDesignGuide(considerationForDesign_designGuide);
+		setConsiderationForDesign(object);
+	}
+
+	public String getConsiderationForDevelopment_conConstraint() {
+		String response = considerationForDevelopment_conConstraint;
+		if (response == null) {
+			return "";
+		}
+		return response;
+	}
+
+	public void setConsiderationForDevelopment_conConstraint(String considerationForDevelopment_conConstraint) {
+		this.considerationForDevelopment_conConstraint = considerationForDevelopment_conConstraint;
+		ForDevelopment object = getConsiderationForDevelopment();
+		if (null == object) {
+			object = new ForDevelopment();
+		}
+		object.setConConstraint(considerationForDevelopment_conConstraint);
+		setConsiderationForDevelopment(object);
+	}
+
+	public String getConsiderationForDevelopment_conDescription() {
+		String response = considerationForDevelopment_conDescription;
+		if (response == null) {
+			return "";
+		}
+		return response;
+	}
+
+	public void setConsiderationForDevelopment_conDescription(String considerationForDevelopment_conDescription) {
+		this.considerationForDevelopment_conDescription = considerationForDevelopment_conDescription;
+		ForDevelopment object = getConsiderationForDevelopment();
+		if (null == object) {
+			object = new ForDevelopment();
+		}
+		object.setConDescription(considerationForDevelopment_conDescription);
+		setConsiderationForDevelopment(object);
+	}
+
+	public String getConsiderationForDevelopment_conPurpose() {
+		String response = considerationForDevelopment_conPurpose;
+		if (response == null) {
+			return "";
+		}
+		return response;
+	}
+
+	public void setConsiderationForDevelopment_conPurpose(String considerationForDevelopment_conPurpose) {
+		this.considerationForDevelopment_conPurpose = considerationForDevelopment_conPurpose;
+		ForDevelopment object = getConsiderationForDevelopment();
+		if (null == object) {
+			object = new ForDevelopment();
+		}
+		object.setConPurpose(considerationForDevelopment_conPurpose);
+		setConsiderationForDevelopment(object);
+	}
+	
+	//
+	
+	public String getConsiderationForDevelopment_devGuide() {
+		String response = considerationForDevelopment_devGuide;
+		if (response == null) {
+			return "";
+		}
+		return response;
+	}
+
+	public void setConsiderationForDevelopment_devGuide(String considerationForDevelopment_devGuide) {
+		this.considerationForDevelopment_devGuide = considerationForDevelopment_devGuide;
+		ForDevelopment object = getConsiderationForDevelopment();
+		if (null == object) {
+			object = new ForDevelopment();
+		}
+		object.setDevGuide(considerationForDevelopment_devGuide);
+		setConsiderationForDevelopment(object);
+	}
+
+	public String getConsiderationForTesting_conConstraint() {
+		String response = considerationForTesting_conConstraint;
+		if (response == null) {
+			return "";
+		}
+		return response;
+	}
+
+	public void setConsiderationForTesting_conConstraint(String considerationForTesting_conConstraint) {
+		this.considerationForTesting_conConstraint = considerationForTesting_conConstraint;
+		ForTesting object = getConsiderationForTesting();
+		if (null == object) {
+			object = new ForTesting();
+		}
+		object.setConConstraint(considerationForTesting_conConstraint);
+		setConsiderationForTesting(object);
+	}
+
+	public String getConsiderationForTesting_conDescription() {
+		String response = considerationForTesting_conDescription;
+		if (response == null) {
+			return "";
+		}
+		return response;
+	}
+
+	public void setConsiderationForTesting_conDescription(String considerationForTesting_conDescription) {
+		this.considerationForTesting_conDescription = considerationForTesting_conDescription;
+		ForTesting object = getConsiderationForTesting();
+		if (null == object) {
+			object = new ForTesting();
+		}
+		object.setConDescription(considerationForTesting_conDescription);
+		setConsiderationForTesting(object);
+	}
+
+	public String getConsiderationForTesting_conPurpose() {
+		String response = considerationForTesting_conPurpose;
+		if (response == null) {
+			return "";
+		}
+		return response;
+	}
+
+	public void setConsiderationForTesting_conPurpose(String considerationForTesting_conPurpose) {
+		this.considerationForTesting_conPurpose = considerationForTesting_conPurpose;
+		ForTesting object = getConsiderationForTesting();
+		if (null == object) {
+			object = new ForTesting();
+		}
+		object.setConPurpose(considerationForTesting_conPurpose);
+		setConsiderationForTesting(object);
+	}
+	
+	//
+
+	public String getConsiderationForTesting_testType() {
+		String response = considerationForTesting_testType;
+		if (response == null) {
+			return "";
+		}
+		return response;
+	}
+
+	public void setConsiderationForTesting_testType(String considerationForTesting_testType) {
+		this.considerationForTesting_testType = considerationForTesting_testType;
+		ForTesting object = getConsiderationForTesting();
+		if (null == object) {
+			object = new ForTesting();
+		}
+		object.setTestType(considerationForTesting_testType);
+		setConsiderationForTesting(object);
+	}
+
+	public String getConsiderationForTesting_testGuide() {
+		String response = considerationForTesting_testGuide;
+		if (response == null) {
+			return "";
+		}
+		return response;
+	}
+
+	public void setConsiderationForTesting_testGuide(String considerationForTesting_testGuide) {
+		this.considerationForTesting_testGuide = considerationForTesting_testGuide;
+		ForTesting object = getConsiderationForTesting();
+		if (null == object) {
+			object = new ForTesting();
+		}
+		object.setTestGuide(considerationForTesting_testGuide);
+		setConsiderationForTesting(object);
 	}
 
 	public String getContext_bussinessDomain() {
 		String response = context_bussinessDomain;
-		if (author_name == null) {
+		if (response == null) {
 			return "";
 		}
 		return response;
@@ -254,7 +471,7 @@ public class RequirementPatternExt extends RequirementPattern {
 
 	public String getContext_organizationFactor() {
 		String response = context_organizationFactor;
-		if (author_name == null) {
+		if (response == null) {
 			return "";
 		}
 		return response;
@@ -272,7 +489,7 @@ public class RequirementPatternExt extends RequirementPattern {
 
 	public String getContext_patternType() {
 		String response = context_patternType;
-		if (author_name == null) {
+		if (response == null) {
 			return "";
 		}
 		return response;
@@ -290,7 +507,7 @@ public class RequirementPatternExt extends RequirementPattern {
 
 	public String getContext_reqAct() {
 		String response = context_reqAct;
-		if (author_name == null) {
+		if (response == null) {
 			return "";
 		}
 		return response;
@@ -308,7 +525,7 @@ public class RequirementPatternExt extends RequirementPattern {
 
 	public String getContext_stakeholder_role() {
 		String response = context_stakeholder_role;
-		if (author_name == null) {
+		if (response == null) {
 			return "";
 		}
 		return response;
@@ -331,7 +548,7 @@ public class RequirementPatternExt extends RequirementPattern {
 
 	public String getContext_stakeholder_stakeGoal() {
 		String response = context_stakeholder_stakeGoal;
-		if (author_name == null) {
+		if (response == null) {
 			return "";
 		}
 		return response;

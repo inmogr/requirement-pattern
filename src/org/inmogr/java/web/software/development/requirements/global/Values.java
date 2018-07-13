@@ -6,7 +6,7 @@ public class Values {
 	//
 	//
 	//
-	public static final String DATABASE_URL = "jdbc:mysql://localhost:3306/";
+	public static final String DATABASE_URL = "jdbc:mysql://localhost:3307/";
 	public static final String DATABASE_USER = "root";
 	public static final String DATABASE_PASS = "root";
 	public static final String DATABASE_NAME = "imam";

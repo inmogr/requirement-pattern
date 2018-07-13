@@ -1,6 +1,6 @@
 package org.inmogr.java.web.software.development.requirements.classes;
 
-public class ForDesign {
+public class ForDesign extends Consideration {
 
 	private String designPatternName;
 	private String designGuide;

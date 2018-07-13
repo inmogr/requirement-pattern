@@ -11,7 +11,7 @@ public class ListItemsBean extends ListItemsExt {
 
 	private JsonArray listItems;
 	
-	private JsonObject getItem(int index) {
+	public JsonObject getItem(int index) {
 		if (index < 0 || listItems.size() <= index) {
 			return null;
 		}

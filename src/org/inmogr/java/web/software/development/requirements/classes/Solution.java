@@ -2,18 +2,18 @@ package org.inmogr.java.web.software.development.requirements.classes;
 
 public class Solution {
 
-	private int solutionID;
+	private String solutionID;
 	private String solutionName;
-	private int patternID;
+	private String patternID;
 	private String goal;
 	private String description;
 	private OrthogonalVM variabilityModel;
 
-	public int getSolutionID() {
+	public String getSolutionID() {
 		return solutionID;
 	}
 
-	public void setSolutionID(int solutionID) {
+	public void setSolutionID(String solutionID) {
 		this.solutionID = solutionID;
 	}
 
@@ -25,11 +25,11 @@ public class Solution {
 		this.solutionName = solutionName;
 	}
 
-	public int getPatternID() {
+	public String getPatternID() {
 		return patternID;
 	}
 
-	public void setPatternID(int patternID) {
+	public void setPatternID(String patternID) {
 		this.patternID = patternID;
 	}
 
