@@ -1,6 +1,6 @@
 CREATE TABLE `common_req` (
-  `common_req_id` int(20) NOT NULL,
-  `requirement_id` double NOT NULL,
+  `common_req_id` varchar(10) NOT NULL,
+  `requirement_id` varchar(10) NOT NULL,
   `common_description` longtext NOT NULL,
   `common_constraint` longtext NOT NULL,
   `fixed_part` longtext NOT NULL,
