@@ -1,6 +1,6 @@
 CREATE TABLE `variable_req` (
-  `variable_req_id` int(20) NOT NULL,
-  `requirement_id` double NOT NULL,
+  `variable_req_id` varchar(10) NOT NULL,
+  `requirement_id` varchar(10) NOT NULL,
   `var_description` longtext NOT NULL,
   `var_constraint` longtext NOT NULL,
   `fixed_part` longtext NOT NULL,
