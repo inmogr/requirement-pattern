@@ -39,7 +39,7 @@
             	</a>
             </div>
             <div class="col text-center">
-                <form action="signout">
+                <form method="post" action="../signout">
                     <input type="submit" value="Sign Out" class="btn btn-danger">
                 </form>
             </div>
@@ -122,14 +122,14 @@
                             <div class="form-group row">
                                 <label class="col-sm-4 col-md-3 col-lg-2 col-form-label">Description</label>
                                 <div class="col-sm-8 col-md-9 col-lg-10">
-                                    <input name="varDescription" value=<%=("\""+data.getVarDescription()+"\"")%> placeholder="enter number here" type="text" class="form-control here" aria-describedby="HelpBlock" required="required">
+                                    <textarea name="varDescription" cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getVarDescription())%></textarea>
                                     <span id="HelpBlock" class="form-text text-muted">placeholder</span>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-4 col-md-3 col-lg-2 col-form-label">Var Constraint</label>
                                 <div class="col-sm-8 col-md-9 col-lg-10">
-                                    <input name="varConstraint" value=<%=("\""+data.getVarConstraint()+"\"")%> placeholder="enter number here" type="text" class="form-control here" aria-describedby="HelpBlock" required="required">
+                                    <textarea name="varConstraint" cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getVarConstraint())%></textarea>
                                     <span id="HelpBlock" class="form-text text-muted">placeholder</span>
                                 </div>
                             </div>
@@ -170,6 +170,7 @@
                             </div>
                         </div>
                         <div class="card-footer text-center">
+                        	<input type="hidden" name="isUpdate" value="true">
                             <!-- <button name="clear" type="clear" class="btn btn-danger">Clear</button>-->
                             <button name="submit" type="submit" class="btn btn-primary">Submit</button>
                         </div>

@@ -39,7 +39,7 @@
             	</a>
             </div>
             <div class="col text-center">
-                <form action="signout">
+                <form method="post" action="../signout">
                     <input type="submit" value="Sign Out" class="btn btn-danger">
                 </form>
             </div>
@@ -110,14 +110,14 @@
                             <div class="form-group row">
                                 <label for="patternName" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Pattern Name</label> 
                                 <div class="col-sm-8 col-md-9 col-lg-10">
-                                    <input id="patternName" name="patternName" value=<%=("\""+data.getPatternName()+"\"")%> placeholder="enter text here" type="text" class="form-control here" aria-describedby="HelpBlock" required="required"> 
+                                    <textarea name="patternName" cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getPatternName())%></textarea> 
                                     <span id="HelpBlock" class="form-text text-muted">type any hint you like here</span>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="AKA" class="col-sm-4 col-md-3 col-lg-2 col-form-label">AKA</label> 
                                 <div class="col-sm-8 col-md-9 col-lg-10">
-                                    <input id="AKA" name="AKA" value=<%=("\""+data.getAKA()+"\"")%> placeholder="enter text here" type="text" aria-describedby="HelpBlock" required="required" class="form-control here"> 
+                                    <textarea name="AKA" cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getAKA())%></textarea> 
                                     <span id="HelpBlock" class="form-text text-muted">type any hint you like here</span>
                                 </div>
                             </div>
@@ -165,7 +165,7 @@
                             <div class="form-group row">
                                 <label for="author_name" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Author Name</label> 
                                 <div class="col-sm-8 col-md-9 col-lg-10">
-                                    <input id="author_name" name="author_name" value=<%=("\""+data.getAuthor_name()+"\"")%> placeholder="enter text here" type="text" class="form-control here" aria-describedby="HelpBlock" required="required"> 
+                                    <textarea name="author_name" cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getAuthor_name())%></textarea> 
                                     <span id="HelpBlock" class="form-text text-muted">placeholder</span>
                                 </div>
                             </div>
@@ -186,7 +186,7 @@
                             <div class="form-group row">
                                 <label for="classification_defaultValue" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Classification Default Value</label> 
                                 <div class="col-sm-8 col-md-9 col-lg-10">
-                                    <input id="classification_defaultValue" name="classification_defaultValue" value=<%=("\""+data.getClassification_defaultValue()+"\"")%> placeholder="enter text here" type="text" class="form-control here" aria-describedby="HelpBlock" required="required"> 
+                                    <textarea name="classification_defaultValue" cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getClassification_defaultValue())%></textarea> 
                                     <span id="HelpBlock" class="form-text text-muted">placeholder</span>
                                 </div>
                             </div>
@@ -222,23 +222,100 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="consideration_conConstraint" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Consideration Con Constraint</label> 
+                                <label for="considerationForDesign_conConstraint" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Consideration Con Constraint</label> 
                                 <div class="col-sm-8 col-md-9 col-lg-10">
-                                    <textarea id="consideration_conConstraint" name="consideration_conConstraint" cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getConsideration_conConstraint())%></textarea>
+                                    <textarea id="considerationForDesign_conConstraint" name="considerationForDesign_conConstraint" cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getConsiderationForDesign_conConstraint())%></textarea>
                                     <span id="HelpBlock" class="form-text text-muted">placeholder</span>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="consideration_conDescription" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Consideration Con Description</label> 
+                                <label for="considerationForDesign_conDescription" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Consideration Con Description</label> 
                                 <div class="col-sm-8 col-md-9 col-lg-10">
-                                    <textarea id="consideration_conDescription" name="consideration_conDescription" cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getConsideration_conDescription())%></textarea>
+                                    <textarea id="considerationForDesign_conDescription" name="considerationForDesign_conDescription" cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getConsiderationForDesign_conDescription())%></textarea>
                                     <span id="HelpBlock" class="form-text text-muted">placeholder</span>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-4 col-md-3 col-lg-2 col-form-label" for="consideration_conPurpose">Consideration Con Purpose</label> 
+                                <label class="col-sm-4 col-md-3 col-lg-2 col-form-label" for="considerationForDesign_conPurpose">Consideration Con Purpose</label> 
                                 <div class="col-sm-8 col-md-9 col-lg-10">
-                                    <textarea id="consideration_conPurpose" name="consideration_conPurpose" cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getConsideration_conPurpose())%></textarea>
+                                    <textarea id="considerationForDesign_conPurpose" name="considerationForDesign_conPurpose" cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getConsiderationForDesign_conPurpose())%></textarea>
+                                    <span id="HelpBlock" class="form-text text-muted">placeholder</span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-md-3 col-lg-2 col-form-label" for="considerationForDesign_designPatternName">Consideration Con Purpose</label> 
+                                <div class="col-sm-8 col-md-9 col-lg-10">
+                                    <textarea id="considerationForDesign_designPatternName" name="considerationForDesign_designPatternName" cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getConsiderationForDesign_designPatternName())%></textarea>
+                                    <span id="HelpBlock" class="form-text text-muted">placeholder</span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-md-3 col-lg-2 col-form-label" for="considerationForDesign_designGuide">Consideration Con Purpose</label> 
+                                <div class="col-sm-8 col-md-9 col-lg-10">
+                                    <textarea id="considerationForDesign_designGuide" name="considerationForDesign_designGuide" cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getConsiderationForDesign_designGuide())%></textarea>
+                                    <span id="HelpBlock" class="form-text text-muted">placeholder</span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="considerationForDevelopment_conConstraint" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Consideration Con Constraint</label> 
+                                <div class="col-sm-8 col-md-9 col-lg-10">
+                                    <textarea id="considerationForDevelopment_conConstraint" name="considerationForDevelopment_conConstraint" cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getConsiderationForDevelopment_conConstraint())%></textarea>
+                                    <span id="HelpBlock" class="form-text text-muted">placeholder</span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="considerationForDevelopment_conDescription" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Consideration Con Description</label> 
+                                <div class="col-sm-8 col-md-9 col-lg-10">
+                                    <textarea id="considerationForDevelopment_conDescription" name="considerationForDevelopment_conDescription" cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getConsiderationForDevelopment_conDescription())%></textarea>
+                                    <span id="HelpBlock" class="form-text text-muted">placeholder</span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-md-3 col-lg-2 col-form-label" for="considerationForDevelopment_conPurpose">Consideration Con Purpose</label> 
+                                <div class="col-sm-8 col-md-9 col-lg-10">
+                                    <textarea id="considerationForDevelopment_conPurpose" name="considerationForDevelopment_conPurpose" cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getConsiderationForDevelopment_conPurpose())%></textarea>
+                                    <span id="HelpBlock" class="form-text text-muted">placeholder</span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-md-3 col-lg-2 col-form-label" for="considerationForDevelopment_devGuide">Consideration Con Purpose</label> 
+                                <div class="col-sm-8 col-md-9 col-lg-10">
+                                    <textarea id="considerationForDevelopment_devGuide" name="considerationForDevelopment_devGuide" cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getConsiderationForDevelopment_devGuide())%></textarea>
+                                    <span id="HelpBlock" class="form-text text-muted">placeholder</span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="considerationForTesting_conConstraint" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Consideration Con Constraint</label> 
+                                <div class="col-sm-8 col-md-9 col-lg-10">
+                                    <textarea id="considerationForTesting_conConstraint" name="considerationForTesting_conConstraint" cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getConsiderationForTesting_conConstraint())%></textarea>
+                                    <span id="HelpBlock" class="form-text text-muted">placeholder</span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="considerationForTesting_conDescription" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Consideration Con Description</label> 
+                                <div class="col-sm-8 col-md-9 col-lg-10">
+                                    <textarea id="considerationForTesting_conDescription" name="considerationForTesting_conDescription" cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getConsiderationForTesting_conDescription())%></textarea>
+                                    <span id="HelpBlock" class="form-text text-muted">placeholder</span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-md-3 col-lg-2 col-form-label" for="considerationForTesting_conPurpose">Consideration Con Purpose</label> 
+                                <div class="col-sm-8 col-md-9 col-lg-10">
+                                    <textarea id="considerationForTesting_conPurpose" name="considerationForTesting_conPurpose" cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getConsiderationForTesting_conPurpose())%></textarea>
+                                    <span id="HelpBlock" class="form-text text-muted">placeholder</span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-md-3 col-lg-2 col-form-label" for="considerationForTesting_testType">Consideration Con Purpose</label> 
+                                <div class="col-sm-8 col-md-9 col-lg-10">
+                                    <textarea id="considerationForTesting_testType" name="considerationForTesting_testType" cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getConsiderationForTesting_testType())%></textarea>
+                                    <span id="HelpBlock" class="form-text text-muted">placeholder</span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-md-3 col-lg-2 col-form-label" for="considerationForTesting_testGuide">Consideration Con Purpose</label> 
+                                <div class="col-sm-8 col-md-9 col-lg-10">
+                                    <textarea id="considerationForTesting_testGuide" name="considerationForTesting_testGuide" cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getConsiderationForTesting_testGuide())%></textarea>
                                     <span id="HelpBlock" class="form-text text-muted">placeholder</span>
                                 </div>
                             </div>

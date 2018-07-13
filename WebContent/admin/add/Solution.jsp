@@ -39,7 +39,7 @@
             	</a>
             </div>
             <div class="col text-center">
-                <form action="signout">
+                <form method="post" action="../signout">
                     <input type="submit" value="Sign Out" class="btn btn-danger">
                 </form>
             </div>

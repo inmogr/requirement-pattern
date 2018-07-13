@@ -39,7 +39,7 @@
             	</a>
             </div>
             <div class="col text-center">
-                <form action="signout">
+                <form method="post" action="../signout">
                     <input type="submit" value="Sign Out" class="btn btn-danger">
                 </form>
             </div>
@@ -108,42 +108,42 @@
                             <div class="form-group row">
                                 <label class="col-sm-4 col-md-3 col-lg-2 col-form-label">ID</label> 
                                 <div class="col-sm-8 col-md-9 col-lg-10">
-                                    <input value=<%=("\""+data.getCommonReqID()+"\"")%> placeholder="enter number here" type="text" class="form-control here" aria-describedby="HelpBlock" required="required"> 
+                                    <input name="commonReqID" value=<%=("\""+data.getCommonReqID()+"\"")%> placeholder="enter number here" type="text" class="form-control here" aria-describedby="HelpBlock" required="required"> 
                                     <span id="HelpBlock" class="form-text text-muted">placeholder</span>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-4 col-md-3 col-lg-2 col-form-label">Requirement ID</label> 
                                 <div class="col-sm-8 col-md-9 col-lg-10">
-                                    <input value=<%=("\""+data.getRequirementID()+"\"")%> placeholder="enter number here" type="text" class="form-control here" aria-describedby="HelpBlock" required="required"> 
+                                    <input name="requirementID" value=<%=("\""+data.getRequirementID()+"\"")%> placeholder="enter number here" type="text" class="form-control here" aria-describedby="HelpBlock" required="required"> 
                                     <span id="HelpBlock" class="form-text text-muted">placeholder</span>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-4 col-md-3 col-lg-2 col-form-label">Description</label> 
                                 <div class="col-sm-8 col-md-9 col-lg-10">
-                                    <textarea cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getCommonDescription())%></textarea>
+                                    <textarea name="commonDescription" cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getCommonDescription())%></textarea>
                                     <span id="HelpBlock" class="form-text text-muted">placeholder</span>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-4 col-md-3 col-lg-2 col-form-label">Constraint</label> 
                                 <div class="col-sm-8 col-md-9 col-lg-10">
-                                    <textarea cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getCommonConstraint())%></textarea>
+                                    <textarea name="commonConstraint" cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getCommonConstraint())%></textarea>
                                     <span id="HelpBlock" class="form-text text-muted">placeholder</span>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-4 col-md-3 col-lg-2 col-form-label">Fixed Part</label> 
                                 <div class="col-sm-8 col-md-9 col-lg-10">
-                                    <textarea cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getFixedPart())%></textarea>
+                                    <textarea name="fixedPart" cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getFixedPart())%></textarea>
                                     <span id="HelpBlock" class="form-text text-muted">placeholder</span>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-4 col-md-3 col-lg-2 col-form-label">Extended Part</label> 
                                 <div class="col-sm-8 col-md-9 col-lg-10">
-                                    <textarea cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getExtendedPart())%></textarea>
+                                    <textarea name="extendedPart" cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getExtendedPart())%></textarea>
                                     <span id="HelpBlock" class="form-text text-muted">placeholder</span>
                                 </div>
                             </div> 

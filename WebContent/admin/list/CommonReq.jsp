@@ -42,7 +42,7 @@
             	</a>
             </div>
             <div class="col text-center">
-                <form method="post" action="signout">
+                <form method="post" action="../signout">
                     <input type="submit" value="Sign Out" class="btn btn-danger">
                 </form>
             </div>
@@ -103,6 +103,9 @@
 						</td>
 						<td>
 							<%=dataList.getItem(index, listType, "")%>
+							<span hidden="true">
+								<%=dataList.getItem(index).toString()%>
+							</span>
 						</td>
 						<td style="width: 10%;">
 							<form method="post" action="CommonReq.jsp">
@@ -113,13 +116,13 @@
 						</td>
 						<td style="width: 10%;">
 							<form method="post" action=<%=("\""+"../update/"+listType+".jsp"+"\"")%>>
-								<input type="hidden" name="commonRequirementID" value=<%=("\""+dataList.getItem(index, listType, "id")+"\"")%>>
+								<input type="hidden" name="commonReqID" value=<%=("\""+dataList.getItem(index, listType, "id")+"\"")%>>
 								<input type="submit" value="Update" class="btn btn-primary">
 							</form>
 						</td>
 						<td style="width: 10%;">
 							<form method="post" action=<%=("\""+"../delete/"+listType+".jsp"+"\"")%>>
-								<input type="hidden" name="commonRequirementID" value=<%=("\""+dataList.getItem(index, listType, "id")+"\"")%>>
+								<input type="hidden" name="commonReqID" value=<%=("\""+dataList.getItem(index, listType, "id")+"\"")%>>
 								<input type="submit" value="Delete" class="btn btn-danger">
 							</form>
 						</td>

@@ -39,7 +39,7 @@
             	</a>
             </div>
             <div class="col text-center">
-                <form action="signout">
+                <form method="post" action="../signout">
                     <input type="submit" value="Sign Out" class="btn btn-danger">
                 </form>
             </div>
@@ -110,7 +110,7 @@
                             <div class="form-group row">
                                 <label class="col-sm-4 col-md-3 col-lg-2 col-form-label">Name</label> 
                                 <div class="col-sm-8 col-md-9 col-lg-10">
-                                    <input name="reqName" value=<%=("\""+data.getReqName()+"\"")%> placeholder="enter text here" type="text" class="form-control here" aria-describedby="HelpBlock" required="required"> 
+                                    <textarea name="reqName" cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getReqName())%></textarea> 
                                     <span id="HelpBlock" class="form-text text-muted">placeholder</span>
                                 </div>
                             </div>
@@ -153,7 +153,7 @@
                             <div class="form-group row">
                                 <label class="col-sm-4 col-md-3 col-lg-2 col-form-label">Pattern Name</label> 
                                 <div class="col-sm-8 col-md-9 col-lg-10">
-                                    <input name="patternName" value=<%=("\""+data.getPatternName()+"\"")%> placeholder="enter text here" type="text" class="form-control here" aria-describedby="HelpBlock" required="required"> 
+                                    <textarea name="patternName" cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getPatternName())%></textarea> 
                                     <span id="HelpBlock" class="form-text text-muted">placeholder</span>
                                 </div>
                             </div>
