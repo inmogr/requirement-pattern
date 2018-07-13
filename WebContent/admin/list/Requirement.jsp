@@ -41,7 +41,7 @@
             	</a>
             </div>
             <div class="col text-center">
-                <form method="post" action="signout">
+                <form method="post" action="../signout">
                     <input type="submit" value="Sign Out" class="btn btn-danger">
                 </form>
             </div>
@@ -84,6 +84,9 @@
 						</td>
 						<td>
 							<%=dataList.getItem(index, listType, "")%>
+							<span hidden="true">
+								<%=dataList.getItem(index).toString()%>
+							</span>
 						</td>
 						<td style="width: 10%;">
 							<form method="post" action="CommonReq.jsp">

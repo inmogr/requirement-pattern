@@ -41,7 +41,7 @@
             	</a>
             </div>
             <div class="col text-center">
-                <form method="post" action="signout">
+                <form method="post" action="../signout">
                     <input type="submit" value="Sign Out" class="btn btn-danger">
                 </form>
             </div>
@@ -80,10 +80,13 @@
 				%>
 					<tr>
 						<td style="width: 20%;">
-							<%=dataList.getItem(index, listType, "id")%>
+							<%=(index + 1)%>
 						</td>
 						<td>
-							<%=dataList.getItem(index, listType, "")%>
+							<%=dataList.getItem(index, listType, "id")%>
+							<span hidden="true">
+								<%=dataList.getItem(index).toString()%>
+							</span>
 						</td>
 						<td style="width: 10%;">
 							<form method="post" action="RequirementPattern.jsp">
