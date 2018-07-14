@@ -7,6 +7,8 @@ public class VariableReqExt extends VariableReq {
 
 	private String variableReq_VName;
 	private String variableReq_VPName;
+	private String variableReq_description;
+	private String variableReq_constaints;
 	private String variableReq_model;
 
 	public String getVariableReq_VName() {
@@ -42,6 +44,42 @@ public class VariableReqExt extends VariableReq {
 			object = new VariablePart();
 		}
 		object.setVPName(variableReq_VPName.split(","));
+		setVarPart(object);
+	}
+
+	public String getVariableReq_description() {
+		String response = variableReq_description;
+		if (response == null) {
+			return "";
+		}
+		return response;
+	}
+
+	public void setVariableReq_description(String variableReq_description) {
+		this.variableReq_description = variableReq_description;
+		VariablePart object = getVarPart();
+		if (null == object) {
+			object = new VariablePart();
+		}
+		object.setDescription(variableReq_description);
+		setVarPart(object);
+	}
+
+	public String getVariableReq_constaints() {
+		String response = variableReq_constaints;
+		if (response == null) {
+			return "";
+		}
+		return response;
+	}
+
+	public void setVariableReq_constaints(String variableReq_constaints) {
+		this.variableReq_constaints = variableReq_constaints;
+		VariablePart object = getVarPart();
+		if (null == object) {
+			object = new VariablePart();
+		}
+		object.setConstraints(variableReq_constaints);
 		setVarPart(object);
 	}
 

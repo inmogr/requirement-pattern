@@ -156,6 +156,12 @@ public class VariableReqBean extends VariableReqExt {
 		if (json.has("vp_name")) {
             setVariableReq_VPName(json.get("vp_name").getAsString());
         }
+		if (json.has("vp_description")) {
+            setVariableReq_description(json.get("vp_description").getAsString());
+        }
+		if (json.has("vp_constraints")) {
+            setVariableReq_constaints(json.get("vp_constraints").getAsString());
+        }
 		if (json.has("model")) {
             setVariableReq_model(json.get("model").getAsString());
         }

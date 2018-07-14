@@ -152,6 +152,8 @@ public class RecordAdd {
 		insert.addValue("variation_point", variableReq.getVariationPoint());
 		insert.addValue("v_name", Converter.arrayToString(variableReq.getVarPart().getVName()));
 		insert.addValue("vp_name", Converter.arrayToString(variableReq.getVarPart().getVPName()));
+		insert.addValue("vp_description", variableReq.getVarPart().getDescription());
+		insert.addValue("vp_constraints", variableReq.getVarPart().getConstraints());
 		insert.addValue("model", variableReq.getVarPart().getModel());
 		insert.setDatabase(Values.DATABASE_NAME);
 		insert.setTable(Values.DATABASE_TABLE_VARIABLE_REQUIREMENT);

@@ -153,6 +153,8 @@ public class RecordUpdate {
 		update.addValue("variation_point", variableReq.getVariationPoint());
 		update.addValue("v_name", Converter.arrayToString(variableReq.getVarPart().getVName()));
 		update.addValue("vp_name", Converter.arrayToString(variableReq.getVarPart().getVPName()));
+		update.addValue("vp_description", variableReq.getVarPart().getDescription());
+		update.addValue("vp_constraints", variableReq.getVarPart().getConstraints());
 		update.addValue("model", variableReq.getVarPart().getModel());
 		update.setDatabase(Values.DATABASE_NAME);
 		update.setTable(Values.DATABASE_TABLE_VARIABLE_REQUIREMENT);
