@@ -157,6 +157,20 @@
                                 </div>
                             </div>
                             <div class="form-group row">
+                                <label class="col-sm-4 col-md-3 col-lg-2 col-form-label">VP / VM Description</label>
+                                <div class="col-sm-8 col-md-9 col-lg-10">
+                                    <textarea name="variableReq_description" cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getVariableReq_description())%></textarea>
+                                    <span id="HelpBlock" class="form-text text-muted">comma separate values; eg: value 1,value 2,value 3,value 4</span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-md-3 col-lg-2 col-form-label">VP / VM Constraint</label>
+                                <div class="col-sm-8 col-md-9 col-lg-10">
+                                    <textarea name="variableReq_constaints" cols="40" rows="5" class="form-control" aria-describedby="HelpBlock" required="required"><%=(data.getVariableReq_constaints())%></textarea>
+                                    <span id="HelpBlock" class="form-text text-muted">comma separate values; eg: value 1,value 2,value 3,value 4</span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label class="col-sm-4 col-md-3 col-lg-2 col-form-label">Model</label>
                                 <div class="col-sm-8 col-md-9 col-lg-10">
                                     <input name="variableReq_model" value=<%=("\""+data.getVariableReq_model()+"\"")%> placeholder="enter text here" type="text" class="form-control here" aria-describedby="HelpBlock" required="required">

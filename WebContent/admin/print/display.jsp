@@ -524,20 +524,12 @@
 									<tr>
 										<th scope="row" rowspan="3">Variable Model Form</th>
 										<td style="width: 20%;">Description</td>
-										<td colspan="2">
-											<!--
-											print.listOfVariableReq.get(print.indexOfRP).get(index1).get(index3).getVPNameAsString()
-											-->
-										</td>
+										<td colspan="2"><%=print.listOfVariableReq.get(print.indexOfRP).get(index1).get(index3).getVarPart().getDescription()%></td>
 									</tr>
 									<tr>
 										<!-- ONE COLUMN USED ALREADY -->
 										<td style="width: 20%;">Constraints</td>
-										<td colspan="2">
-											<!--
-											print.listOfVariableReq.get(print.indexOfRP).get(index1).get(index3).getVNameAsString()
-											-->
-										</td>
+										<td colspan="2"><%=print.listOfVariableReq.get(print.indexOfRP).get(index1).get(index3).getVarPart().getConstraints()%></td>
 									</tr>
 									<tr>
 										<!-- ONE COLUMN USED ALREADY -->
